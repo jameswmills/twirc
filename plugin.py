@@ -103,7 +103,7 @@ class Twirc(callbacks.Plugin):
         user = "trending"
       for tweet in answer:
         try:
-          irc.reply(tweet, prefixNick=False)
+          irc.reply(tweet.encode('utf-8'), prefixNick=False)
         except:
           irc.reply("""The latest tweet from "%s" has some weird characters that I cannot parse.  Sorry!""" % user, prefixNick=False)
 
